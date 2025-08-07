@@ -5,21 +5,20 @@ import java.util.List;
 public class Controller {
 
     //Arreglo bidimensional de numeros que representan tiros de un dado.
-    public double trabajarNumeros(int[][] numeros, char eleccion){
+    public double trabajarNumeros(int[][] numeros, char eleccion) throws Exception {
         switch(eleccion){
             case 'a':
                 return obtenerModa(numeros);
             case 'b':
                 return obtenerPares(numeros);
             case 'c':
-                break;
+                return obtenerImpares(numeros);
             case 'd':
-                break;
+                return obtenerSumaDiagonal(numeros);
             case 'e':
-                break;
+                return obtenerMultiplosDe5(numeros);
         }
-        //Aqui va una excepcion.
-        return 0;
+        throw new Exception("Escribe una opcion valida.");
     }
 
     //Funciones complementarias.
