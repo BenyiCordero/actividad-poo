@@ -71,7 +71,7 @@ public class Controller {
         }
         return cantidadImpares;
     }
-
+//metodo para obtener suma diagonal
 
     public int obtenerSumaDiagonal(int[][] numeros){
         int sumaDiagonal = 0;
@@ -82,7 +82,7 @@ public class Controller {
         return sumaDiagonal;
     }
 
-
+//metodo para obtener multiplos de 5
     public int obtenerMultiplosDe5(int[][] numeros){
         int cantidadMultiplos = 0;
 
