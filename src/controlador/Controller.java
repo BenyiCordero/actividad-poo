@@ -71,7 +71,7 @@ public class Controller {
         }
         return cantidadImpares;
     }
-
+//metodo para obtener suma diagonal
 
     public int obtenerSumaDiagonal(int[][] numeros){
         int sumaDiagonal = 0;
