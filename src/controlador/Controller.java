@@ -82,7 +82,7 @@ public class Controller {
         return sumaDiagonal;
     }
 
-
+//metodo para obtener multiplos de 5
     public int obtenerMultiplosDe5(int[][] numeros){
         int cantidadMultiplos = 0;
 
