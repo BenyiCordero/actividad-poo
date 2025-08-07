@@ -59,4 +59,41 @@ public class Controller {
         }
         return cantidadPares;
     }
+    public int obtenerImpares(int[][] numeros){
+        int cantidadImpares = 0;
+
+        for(int i = 0; i < numeros.length; i++){
+            for(int j = 0; j < numeros[0].length; j++){
+                if(numeros[i][j] % 2 != 0) {
+                    cantidadImpares++;
+                }
+            }
+        }
+        return cantidadImpares;
+    }
+
+
+    public int obtenerSumaDiagonal(int[][] numeros){
+        int sumaDiagonal = 0;
+
+        for(int i = 0; i < numeros.length; i++){
+            sumaDiagonal += numeros[i][i];
+        }
+        return sumaDiagonal;
+    }
+
+
+    public int obtenerMultiplosDe5(int[][] numeros){
+        int cantidadMultiplos = 0;
+
+        for(int i = 0; i < numeros.length; i++){
+            for(int j = 0; j < numeros[0].length; j++){
+                // Si el número es divisible por 5, es un múltiplo
+                if(numeros[i][j] % 5 == 0) {
+                    cantidadMultiplos++;
+                }
+            }
+        }
+        return cantidadMultiplos;
+    }
 }
