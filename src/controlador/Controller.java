@@ -1,5 +1,6 @@
 package controlador;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
@@ -96,5 +97,19 @@ public class Controller {
             }
         }
         return cantidadMultiplos;
+    }
+
+    public static List<String> obtenerCadenasQueComienzanConO(String[][] matriz) {
+        List<String> resultado = new ArrayList<>();
+
+        for (String[] fila : matriz) {
+            for (String palabra : fila) {
+                if (palabra.toLowerCase().startsWith("o")) {
+                    resultado.add(palabra);
+                }
+            }
+        }
+
+        return resultado;
     }
 }
