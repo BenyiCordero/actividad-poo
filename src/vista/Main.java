@@ -51,7 +51,56 @@ public class Main {
                         System.out.println("La cantidad de numeros multiplos de 5 es: " + resultado); break;
                 }
             case 2:
-                break; //Aqui va el llamado al caso 2.
+                System.out.print("¿Cuántas filas tendrá la matriz de cadenas?: ");
+                int filas = sc.nextInt();
+                System.out.print("¿Cuántas columnas?: ");
+                int columnas = sc.nextInt();
+                sc.nextLine(); // Consumir salto de línea
+
+                String[][] matrizCadenas = new String[filas][columnas];
+                System.out.println("Ingresa las cadenas:");
+
+                for (int i = 0; i < filas; i++) {
+                    for (int j = 0; j < columnas; j++) {
+                        System.out.print("Cadena en [" + i + "][" + j + "]: ");
+                        matrizCadenas[i][j] = sc.nextLine();
+                    }
+                }
+
+                // Submenú de análisis
+                char opcionAnalisis;
+                Set<Character> opcionesValidas = Set.of('a', 'b', 'c');
+                do {
+                    System.out.print(
+                            "\n¿Qué deseas analizar?\n" +
+                                    "a) Cadenas que comienzan con 'o'\n" +
+                                    "b) Cadenas que contienen las 5 vocales\n" +
+                                    "c) Cadenas que contienen la sílaba 'sa'\n" +
+                                    "Selecciona una opción: "
+                    );
+                    opcionAnalisis = sc.next().toLowerCase().charAt(0);
+                } while (!opcionesValidas.contains(opcionAnalisis));
+
+                switch (opcionAnalisis) {
+                    case 'a':
+                        System.out.println("\nCadenas que comienzan con 'o':");
+                        controlador.obtenerCadenasQueComienzanConO(matrizCadenas)
+                                .forEach(System.out::println);
+                        break;
+
+                    case 'b':
+                        System.out.println("\nCadenas que contienen las 5 vocales:");
+                        controlador.obtenerCadenasCon5Vocales(matrizCadenas)
+                                .forEach(System.out::println);
+                        break;
+
+                    case 'c':
+                        System.out.println("\nCadenas que contienen la sílaba 'sa':");
+                        controlador.obtenerCadenasQueContienenSa(matrizCadenas)
+                                .forEach(System.out::println);
+                        break;
+                }
+                break;
         }
     }
 
