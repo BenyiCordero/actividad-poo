@@ -5,21 +5,20 @@ import java.util.List;
 public class Controller {
 
     //Arreglo bidimensional de numeros que representan tiros de un dado.
-    public double trabajarNumeros(int[][] numeros, char eleccion){
+    public double trabajarNumeros(int[][] numeros, char eleccion) throws Exception {
         switch(eleccion){
             case 'a':
                 return obtenerModa(numeros);
             case 'b':
                 return obtenerPares(numeros);
             case 'c':
-                break;
+                return obtenerImpares(numeros);
             case 'd':
-                break;
+                return obtenerSumaDiagonal(numeros);
             case 'e':
-                break;
+                return obtenerMultiplosDe5(numeros);
         }
-        //Aqui va una excepcion.
-        return 0;
+        throw new Exception("Escribe una opcion valida.");
     }
 
     //Funciones complementarias.
@@ -54,6 +53,7 @@ public class Controller {
 
         for(int i = 0; i < numeros.length; i++){
             for(int j = 0; j < numeros[0].length; j++){
+                if(numeros[i][j] == 0) break;
                 if(numeros[i][j] % 2 == 0) cantidadPares++;
             }
         }
@@ -88,6 +88,7 @@ public class Controller {
 
         for(int i = 0; i < numeros.length; i++){
             for(int j = 0; j < numeros[0].length; j++){
+                if(numeros[i][j] == 0) break;
                 // Si el número es divisible por 5, es un múltiplo
                 if(numeros[i][j] % 5 == 0) {
                     cantidadMultiplos++;
