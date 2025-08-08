@@ -17,8 +17,11 @@ public class Controller {
                 break;
             case 'e':
                 break;
+            default:
+                throw new IllegalArgumentException("La elección '" + eleccion + "' no es válida.");//exepcion por si la opcion no es valida
         }
         //Aqui va una excepcion.
+
         return 0;
     }
 
@@ -88,7 +91,7 @@ public class Controller {
 
         for(int i = 0; i < numeros.length; i++){
             for(int j = 0; j < numeros[0].length; j++){
-                // Si el número es divisible por 5, es un múltiplo
+                // Saber si el número es divisible por 5
                 if(numeros[i][j] % 5 == 0) {
                     cantidadMultiplos++;
                 }
