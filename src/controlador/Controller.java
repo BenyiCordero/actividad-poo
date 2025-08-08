@@ -112,4 +112,27 @@ public class Controller {
 
         return resultado;
     }
+
+    public static List<String> obtenerCadenasCon5Vocales(String[][] matriz) {
+        List<String> resultado = new ArrayList<>();
+
+        for (String[] fila : matriz) {
+            for (String palabra : fila) {
+                if (contieneTodasLasVocales(palabra.toLowerCase())) {
+                    resultado.add(palabra);
+                }
+            }
+        }
+
+        return resultado;
+    }
+
+    private static boolean contieneTodasLasVocales(String palabra) {
+        return palabra.contains("a") &&
+                palabra.contains("e") &&
+                palabra.contains("i") &&
+                palabra.contains("o") &&
+                palabra.contains("u");
+    }
+
 }
