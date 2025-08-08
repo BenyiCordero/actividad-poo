@@ -50,6 +50,7 @@ public class Main {
                     case 'e' :
                         System.out.println("La cantidad de numeros multiplos de 5 es: " + resultado); break;
                 }
+                break;
             case 2:
                 System.out.print("¿Cuántas filas tendrá la matriz de cadenas?: ");
                 int filas = sc.nextInt();
